@@ -1,0 +1,12 @@
+#!/bin/bash
+gcc -c library.c -o library.o
+gcc -c keygen.c -o keygen.o
+gcc -c otp_enc_d.c -o otp_enc_d.o
+gcc -c otp_dec_d.c -o otp_dec_d.o
+gcc -c otp_enc.c -o otp_enc.o
+gcc -c otp_dec.c -o otp_dec.o
+gcc keygen.o -o keygen
+gcc otp_enc_d.o library.o -o otp_enc_d
+gcc otp_dec_d.o library.o -o otp_dec_d
+gcc otp_enc.o library.o -o otp_enc
+gcc otp_dec.o library.o -o otp_dec
